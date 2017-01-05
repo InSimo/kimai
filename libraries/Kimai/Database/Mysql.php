@@ -2824,7 +2824,7 @@ class Kimai_Database_Mysql
             $date = $date->format('Y-m-d');
             $pair = array('id' => $row['timeEntryID'] + 0, 'duration' => $row['duration']);
 
-            if (isset($entry[$date]))
+            if (isset($entry['dates'][$date]))
             {
                 $entry['dates'][$date]['edit_locked'] = $entry[$date]['edit_locked'] && false;
                 $entry['dates'][$date]['total'] += $row['duration'];
