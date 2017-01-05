@@ -1,0 +1,14 @@
+.table_header {
+    background-image: url('grfx/g3_table_header.png');
+}
+
+td span.hidden,
+td.hidden {
+    color:#bbb;
+}
+
+/* Remove To/From columns per Brett's request */
+td.from,
+td.to {
+    display: none;
+}

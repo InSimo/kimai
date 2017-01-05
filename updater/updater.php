@@ -1174,6 +1174,10 @@ if ((int)$revisionDB < 1393) {
     exec_query("ALTER TABLE `${p}timeSheet` CHANGE `fixedRate` `fixedRate` DECIMAL(10,2) NULL");
 }
 
+# TODO: The following needs to be added before changes can be merged upstream.
+#    # column already added in installer/installPermissions.php in r1374
+#    exec_query("ALTER TABLE `${p}globalRoles` ADD `ki_weeksheets-access` tinyint DEFAULT 1;", false);
+
 // ================================================================================
 // FINALIZATION: update DB version number
 // ================================================================================

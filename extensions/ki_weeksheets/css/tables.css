@@ -1,0 +1,195 @@
+
+div.ki_weeksheets table {
+    border-collapse: collapse;
+    font-size: 11px;
+    color: #363636;
+    border-bottom:1px solid #888;
+}
+div.ki_weeksheets table a.preselect_lnk {
+    color: #363636;
+    text-decoration:none;
+    border-bottom:1px dotted #bbb;
+}
+
+div.ki_weeksheets table a:hover {
+    color: #0F9E00;
+    border-bottom:none;
+}
+
+div.ki_weeksheets table thead {
+    height:25px;
+    text-align:left;
+    color:#FFF;
+}
+
+div.ki_weeksheets table thead th {
+    background-image: url('../../../skins/standard/grfx/g3_table_header.png');
+}
+
+div.ki_weeksheets tr.even td,
+div.ki_weeksheets tr.odd td,
+div.ki_weeksheets tr.odd th
+{
+    border-bottom: none;
+    border-left: none;
+    border-right: 1px dotted #CCC;
+/*    border-top: 1px solid #DDD;*/
+    padding: 3px 4px 4px 5px;
+}
+#weekSheet_head td {padding: 3px 4px 4px 6px;}
+
+#weekSheetTable .day-totals td {
+    border-top: 1px solid #888;
+}
+
+#weekSheetTable .header th {
+    border-bottom: 1px solid #888;
+}
+
+div.ki_weeksheets tr.hover td {
+    background: #FFC !important;
+/*    border-top: 1px solid #666 !important;
+    border-bottom: 1px solid #666 !important;*/
+}
+
+div.ki_weeksheets tr.even td {
+    background: #FFF;
+}
+
+div.ki_weeksheets tr.odd td {
+    background: #EEE;
+}
+
+div.ki_weeksheets .total {
+    border-left: 1px solid #888;
+}
+
+div.ki_weeksheets .project {
+    border-right: 1px solid #888;
+}
+
+div#weekSheetTable tr td.time {
+    border-bottom:1px dotted white;;
+}
+
+div#weekSheetTable tr.even td.time {
+    background: #A4E7A5;
+}
+
+div#weekSheetTable tr.odd td.time {
+    background: #64BF61;
+}
+
+div#weekSheetTable tr.active td.time {
+    background: #F00;
+}
+
+div.ki_weeksheets>div#weekSheet>div#weekSheetTable>table>tbody>tr>td.username {
+    border-right: none;
+}
+
+#weekSheet_head td { white-space:nowrap; }
+
+#weekSheet_head td.option,
+#weekSheet td.option
+{
+    width:70px;
+}
+
+#weekSheet  .weekend
+{
+    background-color: #f99;
+}
+
+#weekSheet_head a {
+    color: white;
+}
+
+#weekSheet_head table {
+    width: 100%;
+}
+
+#weekSheet_head .nav {
+    text-align: right;
+}
+
+#weekSheet_head td.date,
+#weekSheet td.date
+{
+    width:60px;
+}
+
+
+#weekSheet td.date input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+#weekSheet_head td.project,
+#weekSheet td.project,
+{
+    width:300px;
+}
+
+.day-totals .date,
+.project-row .total,
+.day-totals .total {
+    padding: 0 4px;
+}
+
+div#weekSheet_head div.left
+{
+    position:absolute;
+    overflow:hidden;
+    width:32px;
+    height:20px;
+    top:3px;
+    left:3px;
+}
+
+div#weekSheet_head div.left a
+{
+    background-image: url('../../../skins/standard/grfx/add.png');
+    overflow:hidden;
+    display:block;
+    width:22px;
+    height:16px;
+    text-indent:-500px;
+}
+
+div#weekSheet_head td {padding: 3px 4px 4px 6px;}
+
+
+tbody tr.comm0 td {
+    padding:5px;
+    background: #fff;
+    background-image:url('../../../skins/standard/grfx/schraff0.gif');
+}
+
+tbody tr.comm1 td {
+    padding:5px;
+    background: #ff9;
+    background-image:url('../../../skins/standard/grfx/schraff1.gif');
+}
+
+tbody tr.comm2 td {
+    padding:5px;
+    background: #f00;
+    background-image:url('../../../skins/standard/grfx/schraff2.gif');
+    font-weight:bold;
+    color:#fff;
+}
+
+.break_day {
+	border-top:1px solid black;
+}
+.break_gap {
+	border-top:2px dotted #FF6FCF; /* Kathrin wollte das Pink haben ... */
+}
+.time_overlap {
+        border-top:2px solid red;
+}
