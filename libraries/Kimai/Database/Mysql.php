@@ -2826,7 +2826,7 @@ class Kimai_Database_Mysql
 
             if (isset($entry['dates'][$date]))
             {
-                $entry['dates'][$date]['edit_locked'] = $entry[$date]['edit_locked'] && false;
+                $entry['dates'][$date]['edit_locked'] = false && $entry['dates'][$date]['edit_locked'] && false;
                 $entry['dates'][$date]['total'] += $row['duration'];
                 $entry['dates'][$date]['entries'][] = $pair;
             }
