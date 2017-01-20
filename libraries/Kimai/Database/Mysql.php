@@ -2262,6 +2262,65 @@ class Kimai_Database_Mysql
     }
 
     /**
+     * Returns the data of a certain time record, with internal data converted to externally understandable values (but not localized)
+     *
+     * @param integer $timeEntryID  timeEntryID of the record
+     * @return array         the record's data (time, activity id, project id etc) as array, false on failure
+     * @author ja
+     */
+    public function timeEntry_get_data_export($timeEntryID)
+    {
+        // we need to convert userID to userName, so we have to do our own query :(
+        //$data = $this->timeSheet_get_data($timeEntryID);
+
+        $timeEntryID = MySQL::SQLValue($timeEntryID, MySQL::SQLVALUE_NUMBER);
+
+        $table = $this->getTimeSheetTable();
+        $projectTable = $this->getProjectTable();
+        $activityTable = $this->getActivityTable();
+        $customerTable = $this->getCustomerTable();
+        $userTable = $this->getUserTable();
+
+        $select = "SELECT $table.*, $projectTable.name AS projectName, $customerTable.name AS customerName, $activityTable.name AS activityName, $customerTable.customerID AS customerID, $userTable.name AS userName
+                    FROM $table
+                    JOIN $projectTable USING(projectID)
+                    JOIN $customerTable USING(customerID)
+                    JOIN $activityTable USING(activityID)
+                    JOIN $userTable USING(userID)";
+
+
+        if ($timeEntryID) {
+            $result = $this->conn->Query("$select WHERE timeEntryID = " . $timeEntryID);
+        } else {
+            $result = $this->conn->Query("$select WHERE userID = " . $this->kga['user']['userID'] . " ORDER BY timeEntryID DESC LIMIT 1");
+        }
+
+        if (!$result) {
+            $this->logLastError('timeEntry_get_data_export');
+            return false;
+        }
+
+        $data = $this->conn->RowArray(0, MYSQLI_ASSOC);
+
+        if($data) {
+            if(array_key_exists('start', $data)) {
+                $date = new DateTime();
+                $date->setTimeStamp($data['start']);
+                $data['startDate'] = $date->format('Y-m-d');
+                $data['startHour'] = $date->format('H:i:s');
+            }
+            if(array_key_exists('end', $data)) {
+                $date = new DateTime();
+                $date->setTimeStamp($data['end']);
+                $data['endDate'] = $date->format('Y-m-d');
+                $data['endHour'] = $date->format('H:i:s');
+            }
+        }
+        return $data;
+    }
+
+
+    /**
      * delete time sheet entry
      *
      * @param integer $id -> ID of record
@@ -2270,6 +2329,7 @@ class Kimai_Database_Mysql
      */
     public function timeEntry_delete($id)
     {
+        Kimai_DBLogger::log_delete($this->kga['user']['name'], 'timeEntry', $id, $this->timeEntry_get_data_export($id));
         $filter["timeEntryID"] = MySQL::SQLValue($id, MySQL::SQLVALUE_NUMBER);
         $table = $this->getTimeSheetTable();
         $query = MySQL::BuildSQLDelete($table, $filter);
@@ -2315,7 +2375,9 @@ class Kimai_Database_Mysql
             $this->logLastError('timeEntry_create');
             return false;
         }
-        return $this->conn->GetLastInsertID();
+        $id = $this->conn->GetLastInsertID();
+        Kimai_DBLogger::log_create($this->kga['user']['name'], 'timeEntry', $id, $this->timeEntry_get_data_export($id));
+        return $id;
     }
 
     /**
@@ -2331,6 +2393,7 @@ class Kimai_Database_Mysql
         $data = $this->clean_data($data);
 
         $original_array = $this->timeSheet_get_data($id);
+        $original_data = $this->timeEntry_get_data_export($id);
         $new_array = array();
         $budgetChange = 0;
         $approvedChange = 0;
@@ -2393,6 +2456,7 @@ class Kimai_Database_Mysql
                 $this->logLastError('timeEntry_edit');
                 return false;
             }
+            Kimai_DBLogger::log_edit($this->kga['user']['name'], 'timeEntry', $id, $this->timeEntry_get_data_export($id), $original_data);
         } else {
             // $budgetChange += $values['budget'];
             // $approvedChange += $values['approved'];
