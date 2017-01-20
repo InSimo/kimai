@@ -55,6 +55,7 @@ function conditionalSet_REQUEST($name, $original, &$target, $accessor = null)
 // Convert the numeric string from using the decimal seperator configured in settings to use a period, as PHP uses to parse it.
 function fixDecimal($val)
 {
+  global $kga;
   return str_replace($kga['conf']['decimalSeparator'], '.', $val);
 }
 
@@ -503,6 +504,11 @@ switch ($axAction) {
                 break;
             }
         }
+        else {
+            $data = array();
+        }
+
+      if ($id) { // TIME RIGHT - NEW OR EDIT ?
         
         // Get the other id's
         $timeframe = get_timeframe();
@@ -520,8 +526,6 @@ switch ($axAction) {
             echo json_encode(array('errors' => $errors));
             break;
         }
-
-      if ($id) { // TIME RIGHT - NEW OR EDIT ?
 
         if (!weeksheetAccessAllowed($data, $action, $errors)) {
             echo json_encode(array('errors'=>$errors));
@@ -542,7 +546,7 @@ switch ($axAction) {
             $data['description']    = $_REQUEST['description'];
           
             conditionalSet_REQUEST('location', $odata, $data);
-            conditionalSet_REQUEST('trackingNumber', $odata, $data, function() { return isset($_REQUEST['trackingNumber']); });
+            conditionalSet_REQUEST('trackingNumber', $odata, $data, function() { return isset($_REQUEST['trackingNumber']); }); // TODO: check, could replace actual number with 1...
             conditionalSet_REQUEST('comment', $odata, $data);
             conditionalSet_REQUEST('commentType', $odata, $data);
             
@@ -695,6 +699,14 @@ switch ($axAction) {
           break;
         }
 
+        // remove dates and ids arrays
+        if (array_key_exists('dates', $data)) {
+           unset($data['dates']);
+        }
+        if (array_key_exists('ids', $data)) {
+           unset($data['ids']);
+        }
+
         $createdId = $database->timeEntry_create($data);
         if (!$createdId) {
             $errors[''] = $kga['lang']['error'];
@@ -706,7 +718,7 @@ switch ($axAction) {
         break;
 
     case 'update_weekday':
-        //$database->transaction_begin();
+        $database->transaction_begin(); // needed for rollback...
         $errors = array();
 
         foreach ($_REQUEST['entries'] as $entry) {
@@ -747,7 +759,7 @@ switch ($axAction) {
             }
         }
 
-        //$database->transaction_end();
+        $database->transaction_end();
 
         echo json_encode(array('errors' => $errors));
         break;

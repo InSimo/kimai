@@ -121,7 +121,7 @@ $view->assign('showRates', isset($kga['user']) && $database->global_role_allows(
 
 
 $defaults = array(
-    'table_time_format' => $kga['conf']['table_time_format'],
+    'table_time_format' => $kga->getTableTimeFormat(),
 );
 $prefs = $database->user_get_preferences_by_prefix('ui.');
 $view->assign('prefs', array_merge($defaults, $prefs));
