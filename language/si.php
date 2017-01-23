@@ -372,6 +372,7 @@ Izberite drugo refernčno preglednico, ali pa izbrišite obstoječe tabele s to 
         "quote_char" => "meja znakov v polju",
 
         "exportCSV" => "CSV Izvoz",
+        "exportJSON" => "JSON Izvoz",
         "exportPDF" => "PDF Izvoz",
         "exportXLS" => "Excel Izvoz",
         "print" => "Natisni",

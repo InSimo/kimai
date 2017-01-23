@@ -364,6 +364,7 @@ Wybierz inny prefix tabeli lub usuń istniejące tabele z tym prefixem w celu ze
         "quote_char" => "znak graniczny między polami",
 
         "exportCSV" => "CSV eksport",
+        "exportJSON" => "JSON eksport",
         "exportPDF" => "PDF eksport",
         "exportXLS" => "Excel eksport",
         "print" => "Druk",

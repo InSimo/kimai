@@ -57,6 +57,14 @@ switch ($axAction) {
         echo $view->render("floaters/export_CSV.php");
         break;
 
+    case "JSON":
+        $defaults = array('reverse_order' => 0);
+        $prefs = $database->user_get_preferences_by_prefix('ki_export.json.');
+        $view->assign('prefs', array_merge($defaults, $prefs));
+
+        echo $view->render("floaters/export_JSON.php");
+        break;
+
     case "print":
         $defaults = array('print_summary' => 1, 'reverse_order' => 0);
         $prefs = $database->user_get_preferences_by_prefix('ki_export.print.');

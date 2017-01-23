@@ -372,6 +372,7 @@ Choose another table prefix or delete existing tables with this prefix in order 
         "quote_char" => "boundary character for fields",
 
         "exportCSV" => "Flytja út CSV",
+        "exportJSON" => "Flytja út JSON",
         "exportPDF" => "Flytja út PDF",
         "exportXLS" => "Flytja út Excel",
         "print" => "Prenta",

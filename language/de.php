@@ -422,6 +422,7 @@ Wählen Sie ein anderes Tabellenpräfix oder löschen Sie die existierenden Tabe
         "column_delimiter" => "Trennzeichen für Spalten",
         "quote_char" => "Begrenzungszeichen von Feldern",
         "exportCSV" => "CSV Export",
+        "exportJSON" => "JSON Export",
         "exportPDF" => "PDF Export",
         "exportXLS" => "Excel Export",
         "print" => "Drucken",

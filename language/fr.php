@@ -465,6 +465,7 @@ Choisissez un autre préfixe de table ou supprimez les tables existantes avec ce
         "quote_char" => "séparateur de champs",
 
         "exportCSV" => "Export CSV",
+        "exportJSON" => "Export JSON",
         "exportPDF" => "Export PDF",
         "exportXLS" => "Export Excel",
         "print" => "Imprimer",

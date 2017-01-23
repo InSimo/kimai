@@ -414,6 +414,7 @@ EOD
         "column_delimiter" => "scheidingsteken voor kolommen",
         "quote_char" => "grensteken voor velden",
         "exportCSV" => "CSV Export",
+        "exportJSON" => "JSON Export",
         "exportPDF" => "PDF Export",
         "exportXLS" => "Excel Export",
         "print" => "Print",

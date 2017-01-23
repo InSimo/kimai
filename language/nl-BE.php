@@ -406,6 +406,7 @@ Kies een andere tabel prefix of verwijder bestaande tabellen met deze prefix zod
         "quote_char" => "grensteken voor velden",
 
         "exportCSV" => "Exporteer naar CSV",
+        "exportJSON" => "Exporteer naar JSON",
         "exportPDF" => "Exporteer naar PDF",
         "exportXLS" => "Exporteer naar Excel",
         "print" => "Print",

@@ -301,6 +301,7 @@ Choose another table prefix or delete existing tables with this prefix in order 
         "quote_char" => "boundary character for fields",
 
         "exportCSV" => "Esporta CSV",
+        "exportJSON" => "Esporta JSON",
         "exportPDF" => "Esporta PDF",
         "exportXLS" => "Esporta Excel",
         "print" => "Stampa",

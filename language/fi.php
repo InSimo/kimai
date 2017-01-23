@@ -373,6 +373,7 @@ Valitse uusi taulujen etuliite tai poista olemassa olevan taulut asentaaksesi Ki
         "quote_char" => "kenttien rajamerkki",
 
         "exportCSV" => "CSV vienti",
+        "exportJSON" => "JSON vienti",
         "exportPDF" => "PDF vienti",
         "exportXLS" => "Excel vienti",
         "print" => "Tulosta",

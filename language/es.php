@@ -309,6 +309,7 @@ Escoja otro prefijo de tabla o elimine las tablas existentes con este prefijo pa
         "quote_char" => "límite de caracteres para los campos",
 
         "exportCSV" => "Exportación CSV",
+        "exportJSON" => "Exportación JSON",
         "exportPDF" => "Exportación PDF",
         "exportXLS" => "Exportación Excel",
         "print" => "Imprimir",

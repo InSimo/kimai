@@ -54,6 +54,7 @@
                 <a id="export_extension_export_pdf" href="#" class="output_btn"><?php echo $this->kga['lang']['export_extension']['exportPDF'] ?></a>
                 <a id="export_extension_export_xls" href="#" class="output_btn"><?php echo $this->kga['lang']['export_extension']['exportXLS'] ?></a>
                 <a id="export_extension_export_csv" href="#" class="output_btn"><?php echo $this->kga['lang']['export_extension']['exportCSV'] ?></a>
+                <a id="export_extension_export_json" href="#" class="output_btn"><?php echo $this->kga['lang']['export_extension']['exportJSON'] ?></a>
                 <a id="export_extension_print" href="#" class="output_btn"><?php echo $this->kga['lang']['export_extension']['print'] ?></a>
             </div>
         </div>

@@ -423,6 +423,7 @@ Choose another table prefix or delete existing tables with this prefix in order 
         "column_delimiter" => "delimiter for columns",
         "quote_char" => "boundary character for fields",
         "exportCSV" => "CSV Export",
+        "exportJSON" => "JSON Export",
         "exportPDF" => "PDF Export",
         "exportXLS" => "Excel Export",
         "print" => "Print",

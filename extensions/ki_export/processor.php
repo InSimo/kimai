@@ -34,6 +34,7 @@ require("private_func.php");
 // ============================
 
 if ($axAction == 'export_csv' ||
+    $axAction == 'export_json' ||
     $axAction == 'export_pdf' ||
     $axAction == 'export_pdf2' ||
     $axAction == 'export_html' ||
@@ -429,6 +430,38 @@ switch ($axAction) {
             echo implode($column_delimiter, $row);
             echo "\n";
         }
+        break;
+
+
+    /**
+     * Exort as csv file.
+     */
+    case 'export_json':
+
+        $database->user_set_preferences(array(
+            'reverse_order' => isset($_REQUEST['reverse_order']) ? 1 : 0
+        ), 'ki_export.json.');
+
+        $exportData = export_get_data($in, $out, $filterUsers, $filterCustomers, $filterProjects, $filterActivities,
+            false, $reverse_order, $default_location, $filter_cleared, $filter_type, false, $filter_refundable);
+        $column_delimiter = $_REQUEST['column_delimiter'];
+        $quote_char = $_REQUEST['quote_char'];
+
+        header("Content-Disposition:attachment;filename=export.json");
+        header("Content-Type: application/json");
+
+        echo "{";
+        // output of data
+        $prefix = "\n    ";
+        foreach ($exportData as $data) {
+            // TODO: more efficient implementation, here we just get the ID and query all the other info as we are exporting them
+            // in json patch logs
+            $id = $data['id'];
+            $jdata = $database->timeEntry_get_data_export($id);
+            echo $prefix . "\"" . $id . "\":" . json_encode($jdata, JSON_UNESCAPED_SLASHES);
+            $prefix = ",\n    ";
+        }
+        echo "\n}\n";
         break;
 
     /**

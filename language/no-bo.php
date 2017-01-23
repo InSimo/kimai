@@ -308,6 +308,7 @@ return array(
         "quote_char" => "Skilletegn for felt",
 
         "exportCSV" => "CSV eksport",
+        "exportJSON" => "JSON eksport",
         "exportPDF" => "PDF eksport",
         "exportXLS" => "Excel eksport",
         "print" => "Utskrift",

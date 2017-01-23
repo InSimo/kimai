@@ -60,6 +60,11 @@ function export_extension_onload() {
 		floaterShow('../extensions/ki_export/floaters.php', 'CSV', 0, 0, 600);
 		return false;
 	});
+	$('#export_extension_export_json').click(function () {
+		this.blur();
+		floaterShow('../extensions/ki_export/floaters.php', 'JSON', 0, 0, 600);
+		return false;
+	});
 
 	$('#export_extension_print').click(function () {
 		this.blur();

@@ -420,6 +420,7 @@ EOD
         "quote_char" => "分隔字符段",
 
         "exportCSV" => "CSV输出",
+        "exportJSON" => "JSON输出",
         "exportPDF" => "PDF输出",
         "exportXLS" => "Excel输出",
         "print" => "打印",

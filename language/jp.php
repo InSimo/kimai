@@ -412,6 +412,7 @@ Kimaiをクリーンインストールができるために、別の接頭辞を
 		"column_delimiter" => "列の区切り文字",
 		"quote_char" => "フィールドの境界文字",
 		"exportCSV" => "CSV 出力",
+		"exportJSON" => "JSON 出力",
 		"exportPDF" => "PDF 出力",
 		"exportXLS" => "Excel 出力",
 		"print" => "印刷",

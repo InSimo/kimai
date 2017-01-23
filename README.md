@@ -27,7 +27,7 @@ This is just a short feature list, play around with the [demo installation](http
 * Track project budgets
 * Record expenses
 * Print invoices in multiple formats (ODT, ODS, HTML)
-* Export data in multiple formats (PDF, XLS, CSV, direct print)
+* Export data in multiple formats (PDF, XLS, CSV, JSON, direct print)
 * SOAP and JSON API
 * Native apps ... see our [Apps page](http://www.kimai.org/apps/)
 

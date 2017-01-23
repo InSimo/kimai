@@ -363,6 +363,7 @@ Vælg venligst et andet tabel-præfiks eller slet de eksisterende tabeller med d
         "quote_char" => "adskillelsestegn for felter",
 
         "exportCSV" => "CSV-eksport",
+        "exportJSON" => "JSON-eksport",
         "exportPDF" => "PDF-eksport",
         "exportXLS" => "Excel-eksport",
         "print" => "Udskrift",

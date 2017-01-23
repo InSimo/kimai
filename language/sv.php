@@ -302,6 +302,7 @@ Choose another table prefix or delete existing tables with this prefix in order 
         "quote_char" => "avgränsartecken för fält",
 
         "exportCSV" => "CSV Export",
+        "exportJSON" => "JSON Export",
         "exportPDF" => "PDF Export",
         "exportXLS" => "XLS Export",
         "print" => "Skriv ut",

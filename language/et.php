@@ -443,6 +443,7 @@ Määrake mingi muu tabeliprefiks või kustutage olemasolevad selle prefiksiga t
         "quote_char" => "Kirjete piirmärk",
 
         "exportCSV" => "CSV-faili eksportimine",
+        "exportJSON" => "JSON-faili eksportimine",
         "exportPDF" => "PDF-faili eksportimine",
         "exportXLS" => "Eksportimine Excelisse",
         "print" => "Print",

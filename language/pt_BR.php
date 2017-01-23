@@ -325,6 +325,7 @@ Escolha outro prefixo da tabela ou excluir tabelas existentes com esse prefixo, 
         "quote_char" => "Caracteres para campos",
 
         "exportCSV" => "Exportar para CSV",
+        "exportJSON" => "Exportar para JSON",
         "exportPDF" => "Exportar para PDF",
         "exportXLS" => "Exportar para Excel",
         "print" => "Imprimir",
