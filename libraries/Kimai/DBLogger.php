@@ -14,7 +14,8 @@ class Kimai_DBLogger
     private function __construct()
     {
         $d = date("Ymd", time());
-        $this->file = fopen(WEBROOT . 'temporary/kimai-dbchanges-'.$d.'.jsonl', "a");
+        $kimai_log_dir = getenv('KIMAI_LOG_DIR');
+        $this->file = fopen($kimai_log_dir . '/kimai-dbchanges-'.$d.'.jsonl', "a");
     }
 
     /**
